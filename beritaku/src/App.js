@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Indonesia />} />
         <Route path="/covid19" element={<Covid19 />} />
         <Route path="/saved" element={<Saved />} />
-        <Route path="/detailscovid/:id" element={<DetailsCovid19 />} />
+        <Route path="/detailscovid/:index" element={<DetailsCovid19 />} />
       </Routes>
       <Footer />
     </div>
