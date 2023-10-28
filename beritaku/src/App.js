@@ -6,6 +6,7 @@ import Indonesia from "./pages/Indonesia";
 import DetailsCovid19 from "./pages/DetailsCovid19";
 import "../src/styles/App.css";
 import Saved from "./pages/Saved";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/covid19" element={<Covid19 />} />
         <Route path="/saved" element={<Saved />} />
         <Route path="/detailscovid/:index" element={<DetailsCovid19 />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </div>

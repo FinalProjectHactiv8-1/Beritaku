@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCovidData } from "../store/reducers/covid19";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { Row, Col, Card, } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaBookmark, FaInfoCircle } from "react-icons/fa";
 import "../styles/App.css";
