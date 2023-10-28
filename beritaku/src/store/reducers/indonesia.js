@@ -25,18 +25,21 @@ const indonesiaSlice = createSlice({
   },
 });
 
-const apiKey = "db8cd3cb20654bc89250dd3f1960cd28";
+const apiKey = "5d36da2933504ce6b6b2d37afa6fdfd7";
 
-export const fetchIndonesiaData = createAsyncThunk("indonesia/fetchData", async () => {
-  try {
-    const response = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=id&apiKey=${apiKey}`
-    );
-    // console.log(response.data);
-    return response.data;
-  } catch (error) {
-    throw error;
+export const fetchIndonesiaData = createAsyncThunk(
+  "indonesia/fetchData",
+  async () => {
+    try {
+      const response = await axios.get(
+        `https://newsapi.org/v2/top-headlines?country=id&apiKey=${apiKey}`
+      );
+      // console.log(response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
-});
+);
 
 export default indonesiaSlice.reducer;

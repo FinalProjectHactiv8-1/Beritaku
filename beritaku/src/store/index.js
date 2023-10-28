@@ -9,6 +9,6 @@ export const store = configureStore({
     covid: covidReducer,
     indonesia: indonesiaReducer,
     saved: savedReducer,
-    programming: programmingReducer
+    programming: programmingReducer,
   },
 });

@@ -21,11 +21,11 @@ const covidSlice = createSlice({
       .addCase(fetchCovidData.rejected, (state, action) => {
         state.loading = "failed";
         state.error = action.error.message;
-      })
+      });
   },
 });
 
-const apiKey = "db8cd3cb20654bc89250dd3f1960cd28";
+const apiKey = "5d36da2933504ce6b6b2d37afa6fdfd7";
 
 export const fetchCovidData = createAsyncThunk("covid/fetchData", async () => {
   try {
@@ -38,6 +38,5 @@ export const fetchCovidData = createAsyncThunk("covid/fetchData", async () => {
     throw error;
   }
 });
-
 
 export default covidSlice.reducer;
