@@ -5,13 +5,14 @@ import Navbar from "./components/Navbar";
 import Covid19 from "./pages/Covid19";
 import DetailsCovid19 from "./pages/DetailsCovid19";
 import DetailsProgramming from "./pages/DetailsProgramming";
+import DetailsIndo from "./pages/DetailsIndo";
 import Indonesia from "./pages/Indonesia";
 import Programming from "./pages/Programming";
 import Saved from "./pages/Saved";
 
 function App() {
   return (
-    <div className="bg">
+    <div className="app">
       <Navbar />
       <Routes>
         <Route path="/" element={<Indonesia />} />

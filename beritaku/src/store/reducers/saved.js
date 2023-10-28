@@ -25,14 +25,15 @@ const savedSlice = createSlice({
       );
     },
     saveProgrammingArticle: (state, action) => {
-      state.programmingSavedSaved.push({ ...action.payload, saved: true });
+      state.programmingSaved.push({ ...action.payload, saved: true });
       localStorage.setItem(
         "programmingSaved",
         JSON.stringify(state.programmingSaved)
       );
     },
+
     unsaveProgrammingArticle: (state, action) => {
-      state.programmingSavedSaved = state.programmingSavedSaved.filter(
+      state.programmingSaved = state.programmingSaved.filter(
         (article) => article.index !== action.payload.index
       );
       localStorage.setItem(
@@ -40,6 +41,7 @@ const savedSlice = createSlice({
         JSON.stringify(state.programmingSaved)
       );
     },
+
     saveCovidArticle: (state, action) => {
       state.covidSaved.push({ ...action.payload, saved: true });
       localStorage.setItem("covidSaved", JSON.stringify(state.covidSaved));

@@ -90,7 +90,6 @@ function Covid19() {
                     <b>{article.title}</b>
                   </Card.Title>
                 </Link>
-                {/* {article.description} */}
                 <div style={{ color: "#5A5A5A" }}>
                   {formatDate(article.publishedAt)}
                 </div>
