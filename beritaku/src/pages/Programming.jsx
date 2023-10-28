@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCovidData } from "../store/reducers/covid19";
-import { Row, Col, Card,  } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Card, Col, Row } from "react-bootstrap";
 import { FaBookmark, FaInfoCircle } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchProgrammingData } from "../store/reducers/programming.js";
 import "../styles/App.css";
 
 const formatDate = (publishedAt) => {
@@ -12,9 +12,9 @@ const formatDate = (publishedAt) => {
   return date.toLocaleDateString(undefined, options);
 };
 
-function Covid19() {
+function Programming() {
   const dispatch = useDispatch();
-  const covidData = useSelector((state) => state.covid.data);
+  const programmingData = useSelector((state) => state.programming.data);
 
   useEffect(() => {
     const oneMonthAgo = new Date();
@@ -22,17 +22,23 @@ function Covid19() {
 
     const formattedDate = oneMonthAgo.toISOString().split("T")[0];
 
-    dispatch(fetchCovidData({ from: formattedDate }));
+    dispatch(fetchProgrammingData({ from: formattedDate }));
   }, [dispatch]);
+
+  const sortedArticles = programmingData?.articles
+    ? [...programmingData.articles].sort(
+        (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+      )
+    : [];
 
   return (
     <div className="container" style={{ paddingTop: "80px" }}>
       <h2 className="text-center">
-        <b>Covid 19 News</b>
+        <b>Programming News</b>
       </h2>
       <Row className="mt-4">
-        {covidData &&
-          covidData.articles.map((article, index) => (
+        {
+          sortedArticles.map((article, index) => (
             <Col sm={12} md={6} lg={3} key={index}>
               {/* {article.source.name} */}
               <Card
@@ -45,7 +51,7 @@ function Covid19() {
                 }}
               >
                 <Link
-                  to={`/detailscovid/${index}`}
+                  to={`/detailsprogramming/${index}`}
                   style={{ textDecoration: "none" }}
                 >
                   {article.urlToImage && (
@@ -62,7 +68,7 @@ function Covid19() {
                 </Link>
                 <Card.Body className="card-content">
                   <Link
-                    to={`/detailscovid/${index}`}
+                    to={`/detailsprogramming/${index}`}
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <Card.Title className="card-title text-center">
@@ -89,7 +95,7 @@ function Covid19() {
                       See Details
                     </button> */}
                     <Link
-                      to={`/detailscovid/${index}`}
+                      to={`/detailsprogramming/${index}`}
                       style={{ textDecoration: "none" }}
                     >
                       <FaInfoCircle
@@ -113,4 +119,4 @@ function Covid19() {
   );
 }
 
-export default Covid19;
+export default Programming;
