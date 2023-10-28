@@ -21,7 +21,10 @@ function App() {
         <Route path="/detailscovid/:index" element={<DetailsCovid19 />} />
         <Route path="/detailsindo/:index" element={<DetailsIndo />} />
         <Route path="/programming" element={<Programming />} />
-        <Route path="/detailsprogramming/:index" element={<DetailsProgramming />} />
+        <Route
+          path="/detailsprogramming/:index"
+          element={<DetailsProgramming />}
+        />
       </Routes>
       <Footer />
     </div>
