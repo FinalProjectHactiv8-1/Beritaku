@@ -21,7 +21,7 @@ function Footer() {
             </div>
             <div className="col-xs-6 col-md-4">
               <h6 className="text-center">
-                <b>Informasi</b>
+                <b>Information</b>
               </h6>
               <div className="genre-container">
                 <ul className="footer-links text-center">
@@ -45,23 +45,23 @@ function Footer() {
             </div>
             <div className="col-xs-6 col-md-2">
               <h6 className="text-center">
-                <b>Media Beritaku</b>
+                <b>Beritaku Media</b>
               </h6>
               <ul className="footer-links text-center">
+                <li>
+                  <p>Google News</p>
+                </li>
+                <li>
+                  <p>Recode</p>
+                </li>
+                <li>
+                  <p>Hacker News</p>
+                </li>
                 <li>
                   <p>CNET</p>
                 </li>
                 <li>
-                  <p>NPR</p>
-                </li>
-                <li>
-                  <p>Time</p>
-                </li>
-                <li>
                   <p>BBC News</p>
-                </li>
-                <li>
-                  <p>ABC News</p>
                 </li>
               </ul>
             </div>

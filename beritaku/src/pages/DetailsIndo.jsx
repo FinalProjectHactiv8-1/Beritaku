@@ -1,35 +1,31 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCovidData } from "../store/reducers/covid19";
 import { FaAngleRight } from "react-icons/fa";
+import { fetchIndonesiaData } from "../store/reducers/indonesia";
 
-function DetailsCovid19() {
+function DetailsIndo() {
   const { index } = useParams();
   const dispatch = useDispatch();
-  const covidData = useSelector((state) => state.covid.data);
+  const indoData = useSelector((state) => state.indonesia.data);
 
   useEffect(() => {
-    if (!covidData || covidData.articles.length === 0) {
-      dispatch(fetchCovidData());
+    if (!indoData || indoData.articles.length === 0) {
+      dispatch(fetchIndonesiaData());
     }
-  }, [dispatch, covidData]);
+  }, [dispatch, indoData]);
 
-  if (!covidData) {
+  if (!indoData) {
     return <div>Loading...</div>;
   }
 
-  const sortedArticles = [...covidData.articles].sort(
-    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
-  );
-
-  if (index < 0 || index >= sortedArticles.length) {
+  if (index < 0 || index >= indoData.articles.length) {
     return <div>No data available for this article.</div>;
   }
 
-  const detailsCovid = sortedArticles[index];
+  const detailsIndo = indoData.articles[index];
 
-  const publishedAtDate = new Date(detailsCovid.publishedAt);
+  const publishedAtDate = new Date(detailsIndo.publishedAt);
   const publishedAtFormatted = publishedAtDate.toLocaleString("en-US", {
     year: "numeric",
     month: "long",
@@ -47,26 +43,26 @@ function DetailsCovid19() {
         </Link>
         <FaAngleRight />
         <Link
-          to={`/covid19`}
+          to={`/`}
           style={{ textDecoration: "none", color: "black" }}
         >
-          Covid-19
+          Indonesia
         </Link>
       </p>
       <h2 className="text-center">
-        <b>{detailsCovid.title}</b>
+        <b>{detailsIndo.title}</b>
       </h2>
       <div>
         <p className="text-center">
-          {detailsCovid.author} - {detailsCovid.source.name}
+          {detailsIndo.author} - {detailsIndo.source.name}
         </p>
         <p className="text-center" style={{ color: "#5A5A5A" }}>
           {publishedAtFormatted}
         </p>
-        {detailsCovid.urlToImage && (
+        {detailsIndo.urlToImage && (
           <img
-            src={detailsCovid.urlToImage}
-            alt={detailsCovid.title}
+            src={detailsIndo.urlToImage}
+            alt={detailsIndo.title}
             style={{
               width: "100%",
               height: "auto",
@@ -74,12 +70,12 @@ function DetailsCovid19() {
           />
         )}
         <p style={{ color: "#5A5A5A", fontSize: "14px" }}>
-          {detailsCovid.description}
+          {detailsIndo.description}
         </p>
-        <p>{detailsCovid.content}</p>
+        <p>{detailsIndo.content}</p>
       </div>
     </div>
   );
 }
 
-export default DetailsCovid19;
+export default DetailsIndo;

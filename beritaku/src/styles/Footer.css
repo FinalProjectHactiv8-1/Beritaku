@@ -97,7 +97,7 @@ footer {
 }
 .social-icons a {
   background-color: #eceeef;
-  color: #818a91;
+  color: #212F3C;
   font-size: 16px;
   display: inline-block;
   line-height: 44px;
@@ -145,10 +145,4 @@ footer {
     margin-right: 0;
     font-weight: 600;
   }
-}
-
-.genre-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }

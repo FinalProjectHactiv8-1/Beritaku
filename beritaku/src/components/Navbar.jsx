@@ -37,7 +37,7 @@ function NavScroll() {
           <Col
             xs={12}
             md={4}
-            className="d-flex align-items-center justify-content-center"
+            className="d-flex align-items-center justify-content-center "
           >
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -74,9 +74,9 @@ function NavScroll() {
                     name="search"
                     placeholder="Search News"
                     aria-label="Search"
-                    style={{
-                      width: "300px",
-                    }}
+                    // style={{
+                    //   width: "250px",
+                    // }}
                   />
                   <Button
                     style={{

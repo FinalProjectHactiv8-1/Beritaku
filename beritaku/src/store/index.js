@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import covidReducer from "./reducers/covid19";
 import indonesiaReducer from "./reducers/indonesia";
+import savedReducer from "./reducers/saved";
 
 export const store = configureStore({
   reducer: {
     covid: covidReducer,
-    indonesia: indonesiaReducer
+    indonesia: indonesiaReducer,
+    saved: savedReducer
   },
 });
