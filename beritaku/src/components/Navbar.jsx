@@ -9,15 +9,24 @@ import {
   Nav,
   InputGroup,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBookmark, FaSearch } from "react-icons/fa";
 
 function NavScroll() {
+  const navigate = useNavigate();
+
+  const onSearch = (e) => {
+    e.preventDefault();
+    const query = e.target.elements.search.value;
+    const queryParams = new URLSearchParams();
+    queryParams.set("query", query);
+    navigate(`/search?${queryParams.toString()}`);
+  };
+
   return (
     <Navbar
       fixed="top"
       style={{
-        // position: "absolute",
         top: 0,
         left: 0,
         right: 0,
@@ -67,16 +76,13 @@ function NavScroll() {
             className="d-flex align-items-center justify-content-end"
           >
             <Navbar.Collapse id="navbarScroll">
-              <Form className="d-flex">
+              <Form className="d-flex" onSubmit={onSearch}>
                 <InputGroup>
                   <Form.Control
                     type="search"
                     name="search"
                     placeholder="Search News"
                     aria-label="Search"
-                    // style={{
-                    //   width: "250px",
-                    // }}
                   />
                   <Button
                     style={{
