@@ -9,6 +9,7 @@ import DetailsIndo from "./pages/DetailsIndo";
 import Indonesia from "./pages/Indonesia";
 import Programming from "./pages/Programming";
 import Saved from "./pages/Saved";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           path="/detailsprogramming/:index"
           element={<DetailsProgramming />}
         />
+        <Route path="/search" element={<Search />} />
       </Routes>
       <Footer />
     </div>
