@@ -71,33 +71,40 @@ function Programming() {
                 height: "90%",
               }}
             >
-              {article.urlToImage ? (
-                <img
-                  src={article.urlToImage}
-                  alt={article.title}
-                  style={{
-                    width: "100%",
-                    height: "205px",
-                    borderRadius: "10px",
-                  }}
-                />
-              ) : (
-                <img
-                  src="https://placehold.co/600x400?text=No-Image"
-                  alt={article.title || "No Image"}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px",
-                  }}
-                />
-              )}
+              <Link
+                to={article.url}
+                target="_blank"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                {article.urlToImage ? (
+                  <img
+                    src={article.urlToImage}
+                    alt={article.title}
+                    style={{
+                      width: "100%",
+                      height: "205px",
+                      borderRadius: "10px",
+                    }}
+                  />
+                ) : (
+                  <img
+                    src="https://placehold.co/600x400?text=No-Image"
+                    alt={article.title || "No Image"}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      borderRadius: "10px",
+                    }}
+                  />
+                )}
+              </Link>
               <Card.Body className="card-content">
                 <div style={{ color: "#5A5A5A" }}>
                   {article.author} | {formatDate(article.publishedAt)}
                 </div>
                 <Link
-                  to={`/detailsprogramming/${index}`}
+                  to={article.url}
+                  target="_blank"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <Card.Title className="card-title ">
@@ -109,7 +116,6 @@ function Programming() {
                 <Col md={10} className="d-flex justify-content-end">
                   <Link
                     to={`/detailsprogramming/${index}`}
-                    target="_blank"
                     style={{ textDecoration: "none" }}
                   >
                     <FaInfoCircle
