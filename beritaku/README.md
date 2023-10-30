@@ -25,9 +25,9 @@ npm run dev
 
 ### Developer
 
-* Siti Aisyah        (RCTN-KS05-012)
-* Rivaldo Gabriel S  (RCTN-KS05-021)
-* Mayendra           (RCTN-KS05-023)
+* Siti Aisyah        (RCTN-KS0-012)
+* Rivaldo Gabriel S  (RCTN-KS08-021)
+* Mayendra           (RCTN-KS08-023)
 
 ### Program
 
