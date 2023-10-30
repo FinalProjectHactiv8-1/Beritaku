@@ -31,4 +31,4 @@ npm run dev
 
 ### Program
 
-React and React Native for Front End Developer Studi Independen Bersertifikat oleh Kampus Merdeka Batch 5 in Hacktiv8 Indonesia.
+React and React Native for Front End Developer Studi Independen Bersertifikat Kampus Merdeka Batch 5 in Hacktiv8 Indonesia.
